@@ -1,7 +1,7 @@
 {
-  "name": "unplugin-obj",
+  "name": "unplugin-bid",
   "version": "0.1.2",
-  "description": "Import .obj files as strings 🧵 in Vite, Rollup, Webpack + more",
+  "description": "Import .bid files as strings 🧵 in Vite, Rollup, Webpack + more",
   "keywords": [
     "unplugin",
     "vite",
@@ -10,13 +10,13 @@
     "transform",
     "three.js",
     "svelte-cubed",
-    "obj",
-    "obj-loader",
-    "obj-file"
+    "bid",
+    "bid-loader",
+    "bid-file"
   ],
-  "homepage": "https://github.com/tonyketcham/unplugin-obj#readme",
+  "homepage": "https://github.com/tonyketcham/unplugin-bid#readme",
   "bugs": {
-    "url": "https://github.com/tonyketcham/unplugin-obj/issues"
+    "url": "https://github.com/tonyketcham/unplugin-bid/issues"
   },
   "author": {
     "name": "Tony Ketcham",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tonyketcham/unplugin-obj.git"
+    "url": "git+https://github.com/tonyketcham/unplugin-bid.git"
   },
   "license": "MIT",
   "exports": {
@@ -54,8 +54,8 @@
       "import": "./dist/types.mjs"
     },
     "./*": "./*",
-    "./obj": {
-      "types": "./obj.d.ts"
+    "./bid": {
+      "types": "./bid.d.ts"
     }
   },
   "main": "dist/index.js",
@@ -73,9 +73,8 @@
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "play": "npm -C playground run dev",
     "prepublishOnly": "npm run build",
-    "release": "bumpp --commit --push --tag && pnpm publish",
+    "release": "pnpm publish",
     "start": "esno src/index.ts"
   },
   "dependencies": {
@@ -85,7 +84,7 @@
     "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
-    "bumpp": "^6.0.6",
+    "bumpp": "^6.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

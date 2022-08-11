@@ -1,19 +1,19 @@
-# unplugin-obj
+# unplugin-bid
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-obj?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-obj)
+[![NPM version](https://img.shields.io/npm/v/unplugin-bid?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-bid)
 
-An [`.obj`](https://en.wikipedia.org/wiki/Wavefront_.obj_file) file import plugin for Vite, Rollup, and Webpack; built with [unplugin](https://github.com/unjs/unplugin). This gives you a sweet and simple way to import an `.obj` file as a string to, for example, parse into a mesh in something like [three.js](https://threejs.org/), or do whatever you want with.
+An [`.bid`](https://en.wikipedia.org/wiki/Wavefront_.bid_file) file import plugin for Vite, Rollup, and Webpack; built with [unplugin](https://github.com/unjs/unplugin). This gives you a sweet and simple way to import an `.bid` file as a string to, for example, parse into a mesh in something like [three.js](https://threejs.org/), or do whatever you want with.
 
 ## Usage
 
-Here's a simple example which imports an `.obj` file as a string then logs it to the console.
+Here's a simple example which imports an `.bid` file as a string then logs it to the console.
 
 ```ts
-import obj from './models/Lowpoly_tree_sample.obj';
+import bid from './models/Lowpoly_tree_sample.bid';
 
-console.log(obj);
+console.log(bid);
 
-// ...optionally parse the obj file and create a mesh from it...
+// ...optionally parse the bid file and create a mesh from it...
 ```
 
 > TypeSript & eslint may yell at you for trying to import a module where one doesn't exist without this plugin, so you can ask it to stop using the above comments before the import
@@ -21,19 +21,19 @@ console.log(obj);
 ## Install
 
 ```bash
-pnpm i -D unplugin-obj
+pnpm i -D unplugin-bid
 ```
 
 ## Types
 
-The most generally compatible way to add type definitions for `.obj` modules is via a `tsconfig.json` file.
+The most generally compatible way to add type definitions for `.bid` modules is via a `tsconfig.json` file.
 
 ```js
 // tsconfig.json
 {
   "compilerOptions": {
     ...
-    "types": ["unplugin-obj/obj"]
+    "types": ["unplugin-bid/bid"]
   }
 }
 ```
@@ -42,10 +42,10 @@ The most generally compatible way to add type definitions for `.obj` modules is 
 
 ```ts
 // vite.config.ts
-import ObjFileImport from 'unplugin-obj/vite';
+import bidFileImport from 'unplugin-bid/vite';
 
 export default defineConfig({
-  plugins: [ObjFileImport()],
+  plugins: [bidFileImport()],
 });
 ```
 
@@ -53,19 +53,17 @@ Optional method to add types w/o `tsconfig`:
 
 ```ts
 // vite-env.d.ts
-/// <reference types="unplugin-obj/obj" />
+/// <reference types="unplugin-bid/bid" />
 ```
-
-Example: [`playground/`](./playground/)
 
 ### Rollup
 
 ```ts
 // rollup.config.js
-import ObjFileImport from 'unplugin-obj/rollup';
+import bidFileImport from 'unplugin-bid/rollup';
 
 export default {
-  plugins: [ObjFileImport()],
+  plugins: [bidFileImport()],
 };
 ```
 
@@ -75,7 +73,7 @@ export default {
 // webpack.config.js
 module.exports = {
   /* ... */
-  plugins: [require('unplugin-obj/webpack')()],
+  plugins: [require('unplugin-bid/webpack')()],
 };
 ```
 
@@ -84,7 +82,7 @@ module.exports = {
 ```ts
 // svelte.config.js
 /* ... */
-import ObjFileImport from 'unplugin-obj/vite';
+import bidFileImport from 'unplugin-bid/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -93,7 +91,7 @@ const config = {
     /* ... */
     vite: {
       /* ... */
-      plugins: [ObjFileImport()],
+      plugins: [bidFileImport()],
     },
   },
 };
@@ -106,7 +104,7 @@ export default config;
 ```ts
 // nuxt.config.js
 export default {
-  buildModules: [['unplugin-obj/nuxt']],
+  buildModules: [['unplugin-bid/nuxt']],
 };
 ```
 
@@ -118,7 +116,7 @@ export default {
 // vue.config.js
 module.exports = {
   configureWebpack: {
-    plugins: [require('unplugin-obj/webpack')()],
+    plugins: [require('unplugin-bid/webpack')()],
   },
 };
 ```

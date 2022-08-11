@@ -1,20 +1,20 @@
 import { createUnplugin } from 'unplugin';
 
 /**
- * Bundler-agnostic plugin for importing .obj files as strings.
+ * Bundler-agnostic plugin for importing .bid files as strings.
  */
 export default createUnplugin(() => {
-  const objRegex = /\.obj\??/;
+  const BidRegex = /\.bid\??/;
 
   return {
-    name: 'unplugin-obj',
+    name: 'unplugin-bid',
     resolveId(id: string) {
-      if (id.match(objRegex)) {
+      if (id.match(BidRegex)) {
         return id;
       }
     },
     transform(src: string, id: string) {
-      if (id.endsWith('.obj')) {
+      if (id.endsWith('.bid')) {
         const contents = String.raw`${src}`;
 
         return {
@@ -28,7 +28,7 @@ export default createUnplugin(() => {
 
 function getCode(contents: string) {
   return `
-    const obj = \`${contents}\`;
-    export default obj;
+    const bid = \`${contents}\`;
+    export default bid;
   `;
 }
