@@ -1,19 +1,19 @@
-# unplugin-bid
+# unplugin-bib
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-bid?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-bid)
+[![NPM version](https://img.shields.io/npm/v/unplugin-bib?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-bib)
 
-An [`.bid`](https://en.wikipedia.org/wiki/Wavefront_.bid_file) file import plugin for Vite, Rollup, and Webpack; built with [unplugin](https://github.com/unjs/unplugin). This gives you a sweet and simple way to import an `.bid` file as a string to, for example, parse into a mesh in something like [three.js](https://threejs.org/), or do whatever you want with.
+An [`.bib`](https://en.wikipedia.org/wiki/BibTeX) file import plugin for Vite, Rollup, and Webpack; built with [unplugin](https://github.com/unjs/unplugin and https://github.com/tonyketcham/unplugin-obj https://github.com/antfu). This gives you a sweet and simple way to import an `.bib` file as a string to.
 
 ## Usage
 
-Here's a simple example which imports an `.bid` file as a string then logs it to the console.
+Here's a simple example which imports an `.bib` file as a string then logs it to the console.
 
 ```ts
-import bid from './models/Lowpoly_tree_sample.bid';
+import bib from './file.bib';
 
-console.log(bid);
+console.log(bib);
 
-// ...optionally parse the bid file and create a mesh from it...
+// ...optionally parse the bib file and create a mesh from it...
 ```
 
 > TypeSript & eslint may yell at you for trying to import a module where one doesn't exist without this plugin, so you can ask it to stop using the above comments before the import
@@ -21,19 +21,19 @@ console.log(bid);
 ## Install
 
 ```bash
-pnpm i -D unplugin-bid
+pnpm i -D unplugin-bib
 ```
 
 ## Types
 
-The most generally compatible way to add type definitions for `.bid` modules is via a `tsconfig.json` file.
+The most generally compatible way to add type definitions for `.bib` modules is via a `tsconfig.json` file.
 
 ```js
 // tsconfig.json
 {
   "compilerOptions": {
     ...
-    "types": ["unplugin-bid/bid"]
+    "types": ["unplugin-bib/bib"]
   }
 }
 ```
@@ -42,10 +42,10 @@ The most generally compatible way to add type definitions for `.bid` modules is 
 
 ```ts
 // vite.config.ts
-import bidFileImport from 'unplugin-bid/vite';
+import bibFileImport from 'unplugin-bib/vite';
 
 export default defineConfig({
-  plugins: [bidFileImport()],
+  plugins: [bibFileImport()],
 });
 ```
 
@@ -53,17 +53,17 @@ Optional method to add types w/o `tsconfig`:
 
 ```ts
 // vite-env.d.ts
-/// <reference types="unplugin-bid/bid" />
+/// <reference types="unplugin-bib/bib" />
 ```
 
 ### Rollup
 
 ```ts
 // rollup.config.js
-import bidFileImport from 'unplugin-bid/rollup';
+import bibFileImport from 'unplugin-bib/rollup';
 
 export default {
-  plugins: [bidFileImport()],
+  plugins: [BibFileImport()],
 };
 ```
 
@@ -73,7 +73,7 @@ export default {
 // webpack.config.js
 module.exports = {
   /* ... */
-  plugins: [require('unplugin-bid/webpack')()],
+  plugins: [require('unplugin-bib/webpack')()],
 };
 ```
 
@@ -82,7 +82,7 @@ module.exports = {
 ```ts
 // svelte.config.js
 /* ... */
-import bidFileImport from 'unplugin-bid/vite';
+import bibFileImport from 'unplugin-bib/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -91,7 +91,7 @@ const config = {
     /* ... */
     vite: {
       /* ... */
-      plugins: [bidFileImport()],
+      plugins: [bibFileImport()],
     },
   },
 };
@@ -104,7 +104,7 @@ export default config;
 ```ts
 // nuxt.config.js
 export default {
-  buildModules: [['unplugin-bid/nuxt']],
+  buildModules: [['unplugin-bib/nuxt']],
 };
 ```
 
@@ -116,7 +116,7 @@ export default {
 // vue.config.js
 module.exports = {
   configureWebpack: {
-    plugins: [require('unplugin-bid/webpack')()],
+    plugins: [require('unplugin-bib/webpack')()],
   },
 };
 ```

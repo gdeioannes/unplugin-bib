@@ -1,20 +1,20 @@
 import { createUnplugin } from 'unplugin';
 
 /**
- * Bundler-agnostic plugin for importing .bid files as strings.
+ * Bundler-agnostic plugin for importing .bib files as strings.
  */
 export default createUnplugin(() => {
-  const BidRegex = /\.bid\??/;
+  const BibRegex = /\.bid\??/;
 
   return {
-    name: 'unplugin-bid',
+    name: 'unplugin-bib',
     resolveId(id: string) {
-      if (id.match(BidRegex)) {
+      if (id.match(BibRegex)) {
         return id;
       }
     },
     transform(src: string, id: string) {
-      if (id.endsWith('.bid')) {
+      if (id.endsWith('.bib')) {
         const contents = String.raw`${src}`;
 
         return {
@@ -28,7 +28,7 @@ export default createUnplugin(() => {
 
 function getCode(contents: string) {
   return `
-    const bid = \`${contents}\`;
-    export default bid;
+    const bib = \`${contents}\`;
+    export default bib;
   `;
 }

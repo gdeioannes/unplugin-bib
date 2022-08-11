@@ -1,7 +1,7 @@
 {
-  "name": "unplugin-bid",
+  "name": "unplugin-bib",
   "version": "0.1.2",
-  "description": "Import .bid files as strings 🧵 in Vite, Rollup, Webpack + more",
+  "description": "Import .bib files as strings 🧵 in Vite, Rollup, Webpack + more",
   "keywords": [
     "unplugin",
     "vite",
@@ -10,13 +10,13 @@
     "transform",
     "three.js",
     "svelte-cubed",
-    "bid",
-    "bid-loader",
-    "bid-file"
+    "bib",
+    "bib-loader",
+    "bib-file"
   ],
-  "homepage": "https://github.com/tonyketcham/unplugin-bid#readme",
+  "homepage": "https://github.com/tonyketcham/unplugin-bib#readme",
   "bugs": {
-    "url": "https://github.com/tonyketcham/unplugin-bid/issues"
+    "url": "https://github.com/tonyketcham/unplugin-bib/issues"
   },
   "author": {
     "name": "Tony Ketcham",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tonyketcham/unplugin-bid.git"
+    "url": "git+https://github.com/tonyketcham/unplugin-bib.git"
   },
   "license": "MIT",
   "exports": {
@@ -54,8 +54,8 @@
       "import": "./dist/types.mjs"
     },
     "./*": "./*",
-    "./bid": {
-      "types": "./bid.d.ts"
+    "./bib": {
+      "types": "./bib.d.ts"
     }
   },
   "main": "dist/index.js",
